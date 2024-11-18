@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import Post, Comment
 from django_summernote.admin import SummernoteModelAdmin
 
-@admin.register() 
+@admin.register(Post) 
 class PostAdmin(SummernoteModelAdmin):
 
     list_display = ('title', 'slug', 'status')
@@ -13,5 +13,5 @@ class PostAdmin(SummernoteModelAdmin):
 
 # Register your models here.
 
-# admin.site.register(Post)
+# admin.site.register(Post)  - Now we have a decorator above the PostAdmin class; delete the existing Post model registration.
 admin.site.register(Comment)
